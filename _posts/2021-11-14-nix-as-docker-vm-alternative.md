@@ -1,3 +1,8 @@
+layout: post
+title: "Nix as Docker/VM alternative"
+date: 2021-11-14
+
+
 In this post, I'm going to show an alternative to Docker/VMs for creating isolated development environment using Nix.
 
 # 1. What is Nix

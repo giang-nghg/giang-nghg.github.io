@@ -1,6 +1,11 @@
+layout: post
+title: "Running PostgreSQL locally with Nix"
+date: 2021-11-14
+
+
 # 1. Nix?
 
-See [my post about Nix](https://giang-nghg.github.io/posts/nix-as-docker-vm-alternative.html) first.
+See [my post about Nix](https://giang-nghg.github.io/2021/11/14/nix-as-docker-vm-alternative.html) first.
 
 # 2. Nix script
 
