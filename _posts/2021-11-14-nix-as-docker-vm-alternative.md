@@ -56,15 +56,19 @@ pkgs.mkShell {
 }
 ```
 
-You can avoid repeating `pkgs` in their names:
+Or, with a bit more structure:
 
 ```nix
-pkgs.mkShell {
-  buildInputs = with pkgs; [ postgresql python39Packages.django ];
-}
-```
+{ pkgs ? import <nixpkgs> {} }:
 
-What if you have more than one Python dependencies and you don't want to repeat `python39Packages`? Well, I'm also trying to figure this out ¯\_(ツ)_/¯
+with pkgs;
+let deps = [ postgresql ];
+    pythonDeps = with python39Packages; [ django ];
+in
+    pkgs.mkShell {
+        buildInputs = deps ++ pythonDeps;
+    }
+```
 
 Now exit your current Nix shell and run `nix-shell` again. Then check your dependencies, e.g.:
 
